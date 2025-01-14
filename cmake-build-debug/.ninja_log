@@ -1,0 +1,8 @@
+# ninja log v6
+2	271	7585832525908171	build.ninja	52594a22bde89bd
+35	319	7583951287804705	CMakeFiles/Clustering_GA.dir/GroupingEvaluator.cpp.obj	d4fc28229baf8fdf
+44	298	7583951287884773	CMakeFiles/Clustering_GA.dir/Point.cpp.obj	107f3388f9e0d32
+29	1057	7584016213091677	CMakeFiles/Clustering_GA.dir/GroupingChallenge.cpp.obj	a3105d8981bf2e3e
+40	656	7583951287844736	CMakeFiles/Clustering_GA.dir/Optimizer.cpp.obj	24b1e6d85d46f519
+1058	1410	7584016223381275	Clustering_GA.exe	9bef33fb8db22f24
+27	768	7583951287714622	CMakeFiles/Clustering_GA.dir/GaussianGroupingEvaluatorFactory.cpp.obj	14bf0681df0429a2
