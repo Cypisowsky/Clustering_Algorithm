@@ -31,20 +31,35 @@ double NGroupingChallenge::SEResultHolder::calculateFitness() {
     return distanceSum;
 }
 
-double NGroupingChallenge::SEResultHolder::recalculateFitness(size_t index) {
+double NGroupingChallenge::SEResultHolder::recalculateFitness(size_t index, size_t newGroup) {
 
     double distance;
     double distanceSum = 0;
 
     for (size_t i = 0; i + 1 < points.size(); i++)
     {
-            if (values[index]==values[i] && index!=i)
+            if (newGroup==values[i])
             {
                 distance = points[index].dCalculateDistance(points[i]);
 
                 if (distance >= 0)
                 {
-                    //distanceSum += 2.0 * points[i].dCalculateDistance(points[j]);
+                    distanceSum += 2.0 * distance;
+                }else {
+
+                    return -1;
+                }
+            }
+            if (values[index]==values[i])
+            {
+                distance = points[index].dCalculateDistance(points[i]);
+
+                if (distance >= 0)
+                {
+                    distanceSum -= 2.0 * distance;
+                }else {
+
+                    return -1;
                 }
             }
 

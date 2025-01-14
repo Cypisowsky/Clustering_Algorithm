@@ -21,7 +21,7 @@ namespace NGroupingChallenge {
          */
 
     public:
-        SEResultHolder(const int groupCount, std::vector<int> values) : values(std::move(values)), groupCounter(groupCount), fitness(INT_MAX) {}
+        SEResultHolder(const int groupCount, std::vector<int> values) : values(std::move(values)), groupCounter(groupCount), fitness(INT_MAX) {calculateFitness();}
 
         ~SEResultHolder() override = default;
 
@@ -31,7 +31,7 @@ namespace NGroupingChallenge {
 
         int get(const size_t index) override { return index<0||index>=values.size()? -1 : values[index]; }
 
-        void set(const size_t index, const int value) override { if (index>0&&index<values.size()) values[index] = value; }
+        void set(const size_t index, const int value) override { if (index>0&&index<values.size()) {recalculateFitness(index, value); values[index] = value;} }
 
         size_t size() override { return values.size(); }
 
@@ -48,7 +48,7 @@ namespace NGroupingChallenge {
         std::vector<CPoint> points;
 
         double calculateFitness();
-        double recalculateFitness(size_t index);
+        double recalculateFitness(size_t index, size_t newGroup);
 
     };
 }
