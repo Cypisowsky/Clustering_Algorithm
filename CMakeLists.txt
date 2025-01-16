@@ -9,10 +9,15 @@ add_executable(Clustering_GA
         GroupingEvaluator.cpp
         Optimizer.cpp
         Point.cpp
-        IMutationFinder.h
-        ICrossoverFinder.h
-        Individual.cpp
-        Individual.h
-        IResultEncoder.h
-        SEResultHolder.cpp
-        SEResultHolder.h)
+        GA/InterfaceUtils/IMutationFinder.h
+        GA/InterfaceUtils/ICrossoverFinder.h
+        GA/Individual.cpp
+        GA/Individual.h
+        GA/InterfaceUtils/IResultEncoder.h
+        GA/SEResultHolder.cpp
+        GA/SEResultHolder.h
+        GA/BasicMutationAlgorithm.cpp
+        GA/BasicMutationAlgorithm.h
+        GA/BasicCrossoverAlgorithm.cpp
+        GA/BasicCrossoverAlgorithm.h
+        GA/InterfaceUtils/IGeneticAlgorithm.h)

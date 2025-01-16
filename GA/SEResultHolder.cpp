@@ -4,8 +4,8 @@
 
 #include "SEResultHolder.h"
 
-#include "Point.h"
 
+class NGroupingChallenge::CPoint;
 double NGroupingChallenge::SEResultHolder::calculateFitness() {
     double distance;
     double distanceSum = 0;

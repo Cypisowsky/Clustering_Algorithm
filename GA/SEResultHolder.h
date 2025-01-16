@@ -8,11 +8,12 @@
 #include <utility>
 #include <vector>
 
-#include "IResultEncoder.h"
-
+#include "InterfaceUtils/IResultEncoder.h"
+#include "../Point.h"
 
 namespace NGroupingChallenge {
-    class CPoint;
+
+
 
     class SEResultHolder : public IResultEncoder<int> {
         /** @brief (Smart Evaluation Result Holder) - Class that holds the result of the GA and evaluates it's fitness smartly.

@@ -6,7 +6,7 @@
 #define CROSSOVERALGORITHM_H
 #include <random>
 
-#include "Individual.h"
+#include "../Individual.h"
 
 
 namespace NGroupingChallenge {
@@ -16,9 +16,11 @@ namespace NGroupingChallenge {
 
         virtual ~ICrossoverFinder() = default;
 
-        virtual void findToCrossover(std::vector<NGrouppingChallenge::Individual>& individuals) {};
+        //virtual void findToCrossover(std::vector<NGrouppingChallenge::Individual>& individuals) {};
 
-        //virtual NGrouppingChallenge::Individual crossover(NGrouppingChallenge::Individual &individual1, NGrouppingChallenge::Individual &individual2) {};
+        virtual NGrouppingChallenge::Individual crossover(const NGrouppingChallenge::Individual &individual1, const NGrouppingChallenge::Individual &individual2) {
+            return individual1;
+        };
 
 
     private:

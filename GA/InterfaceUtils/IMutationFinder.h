@@ -7,6 +7,7 @@
 #include <random>
 
 #include "Individual.h"
+#include "InterfaceUtils/IResultEncoder.h"
 
 
 namespace NGroupingChallenge {
@@ -16,10 +17,10 @@ namespace NGroupingChallenge {
 
         virtual ~IMutationFinder() = default;
 
-        virtual void mutate(NGrouppingChallenge::Individual &individual){};
+        virtual void mutate(NGrouppingChallenge::Individual& individual){};
 
 
-    private:
+    protected:
         int chance;
         std::mt19937 c_random_engine;
 

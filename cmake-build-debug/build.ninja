@@ -79,17 +79,35 @@ build CMakeFiles/Clustering_GA.dir/Point.cpp.obj: CXX_COMPILER__Clustering_GA_un
   OBJECT_DIR = CMakeFiles\Clustering_GA.dir
   OBJECT_FILE_DIR = CMakeFiles\Clustering_GA.dir
 
-build CMakeFiles/Clustering_GA.dir/Individual.cpp.obj: CXX_COMPILER__Clustering_GA_unscanned_Debug C$:/Documents/Kody/Studia_Rok_2/TEP/Clustering_GA/Individual.cpp || cmake_object_order_depends_target_Clustering_GA
-  DEP_FILE = CMakeFiles\Clustering_GA.dir\Individual.cpp.obj.d
+build CMakeFiles/Clustering_GA.dir/GA/Individual.cpp.obj: CXX_COMPILER__Clustering_GA_unscanned_Debug C$:/Documents/Kody/Studia_Rok_2/TEP/Clustering_GA/GA/Individual.cpp || cmake_object_order_depends_target_Clustering_GA
+  DEP_FILE = CMakeFiles\Clustering_GA.dir\GA\Individual.cpp.obj.d
   FLAGS = -g -std=gnu++11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\Clustering_GA.dir
-  OBJECT_FILE_DIR = CMakeFiles\Clustering_GA.dir
+  OBJECT_FILE_DIR = CMakeFiles\Clustering_GA.dir\GA
 
-build CMakeFiles/Clustering_GA.dir/SEResultHolder.cpp.obj: CXX_COMPILER__Clustering_GA_unscanned_Debug C$:/Documents/Kody/Studia_Rok_2/TEP/Clustering_GA/SEResultHolder.cpp || cmake_object_order_depends_target_Clustering_GA
-  DEP_FILE = CMakeFiles\Clustering_GA.dir\SEResultHolder.cpp.obj.d
+build CMakeFiles/Clustering_GA.dir/GA/SEResultHolder.cpp.obj: CXX_COMPILER__Clustering_GA_unscanned_Debug C$:/Documents/Kody/Studia_Rok_2/TEP/Clustering_GA/GA/SEResultHolder.cpp || cmake_object_order_depends_target_Clustering_GA
+  DEP_FILE = CMakeFiles\Clustering_GA.dir\GA\SEResultHolder.cpp.obj.d
   FLAGS = -g -std=gnu++11 -fdiagnostics-color=always
   OBJECT_DIR = CMakeFiles\Clustering_GA.dir
-  OBJECT_FILE_DIR = CMakeFiles\Clustering_GA.dir
+  OBJECT_FILE_DIR = CMakeFiles\Clustering_GA.dir\GA
+
+build CMakeFiles/Clustering_GA.dir/GA/BasicMutationAlgorithm.cpp.obj: CXX_COMPILER__Clustering_GA_unscanned_Debug C$:/Documents/Kody/Studia_Rok_2/TEP/Clustering_GA/GA/BasicMutationAlgorithm.cpp || cmake_object_order_depends_target_Clustering_GA
+  DEP_FILE = CMakeFiles\Clustering_GA.dir\GA\BasicMutationAlgorithm.cpp.obj.d
+  FLAGS = -g -std=gnu++11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Clustering_GA.dir
+  OBJECT_FILE_DIR = CMakeFiles\Clustering_GA.dir\GA
+
+build CMakeFiles/Clustering_GA.dir/GA/BasicCrossoverAlgorithm.cpp.obj: CXX_COMPILER__Clustering_GA_unscanned_Debug C$:/Documents/Kody/Studia_Rok_2/TEP/Clustering_GA/GA/BasicCrossoverAlgorithm.cpp || cmake_object_order_depends_target_Clustering_GA
+  DEP_FILE = CMakeFiles\Clustering_GA.dir\GA\BasicCrossoverAlgorithm.cpp.obj.d
+  FLAGS = -g -std=gnu++11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Clustering_GA.dir
+  OBJECT_FILE_DIR = CMakeFiles\Clustering_GA.dir\GA
+
+build CMakeFiles/Clustering_GA.dir/GA/InterfaceUtils/IGeneticAlgorithm.cpp.obj: CXX_COMPILER__Clustering_GA_unscanned_Debug C$:/Documents/Kody/Studia_Rok_2/TEP/Clustering_GA/GA/InterfaceUtils/IGeneticAlgorithm.cpp || cmake_object_order_depends_target_Clustering_GA
+  DEP_FILE = CMakeFiles\Clustering_GA.dir\GA\InterfaceUtils\IGeneticAlgorithm.cpp.obj.d
+  FLAGS = -g -std=gnu++11 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\Clustering_GA.dir
+  OBJECT_FILE_DIR = CMakeFiles\Clustering_GA.dir\GA\InterfaceUtils
 
 
 # =============================================================================
@@ -99,7 +117,7 @@ build CMakeFiles/Clustering_GA.dir/SEResultHolder.cpp.obj: CXX_COMPILER__Cluster
 #############################################
 # Link the executable Clustering_GA.exe
 
-build Clustering_GA.exe: CXX_EXECUTABLE_LINKER__Clustering_GA_Debug CMakeFiles/Clustering_GA.dir/GaussianGroupingEvaluatorFactory.cpp.obj CMakeFiles/Clustering_GA.dir/GroupingChallenge.cpp.obj CMakeFiles/Clustering_GA.dir/GroupingEvaluator.cpp.obj CMakeFiles/Clustering_GA.dir/Optimizer.cpp.obj CMakeFiles/Clustering_GA.dir/Point.cpp.obj CMakeFiles/Clustering_GA.dir/Individual.cpp.obj CMakeFiles/Clustering_GA.dir/SEResultHolder.cpp.obj
+build Clustering_GA.exe: CXX_EXECUTABLE_LINKER__Clustering_GA_Debug CMakeFiles/Clustering_GA.dir/GaussianGroupingEvaluatorFactory.cpp.obj CMakeFiles/Clustering_GA.dir/GroupingChallenge.cpp.obj CMakeFiles/Clustering_GA.dir/GroupingEvaluator.cpp.obj CMakeFiles/Clustering_GA.dir/Optimizer.cpp.obj CMakeFiles/Clustering_GA.dir/Point.cpp.obj CMakeFiles/Clustering_GA.dir/GA/Individual.cpp.obj CMakeFiles/Clustering_GA.dir/GA/SEResultHolder.cpp.obj CMakeFiles/Clustering_GA.dir/GA/BasicMutationAlgorithm.cpp.obj CMakeFiles/Clustering_GA.dir/GA/BasicCrossoverAlgorithm.cpp.obj CMakeFiles/Clustering_GA.dir/GA/InterfaceUtils/IGeneticAlgorithm.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Clustering_GA.dir
