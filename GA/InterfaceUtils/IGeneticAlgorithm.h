@@ -4,28 +4,39 @@
 
 #ifndef IGENETICALGORITHM_H
 #define IGENETICALGORITHM_H
+#include <vector>
+
+#include "../Individual.h"
 
 
 namespace NGroupingChallenge {
     class IGeneticAlgorithm {
 
     public:
-        IGeneticAlgorithm(int popSize, double mutationChance, double crossoverChance): popSize(popSize), mutationChance(mutationChance), crossoverChance(crossoverChance) {};
+        IGeneticAlgorithm(const int popSize, const double mutationChance, const double crossoverChance, const std::vector<NGrouppingChallenge::Individual*>& individuals):
+        popSize(popSize), mutationChance(mutationChance), crossoverChance(crossoverChance), individuals(individuals) {};
 
-        IGeneticAlgorithm(IGeneticAlgorithm& geneticAlgorithm) = default;
+        IGeneticAlgorithm(IGeneticAlgorithm& geneticAlgorithm) {};
 
-        virtual ~IGeneticAlgorithm() = default;
+        virtual ~IGeneticAlgorithm(){
+            for (const auto ind : individuals) {
+            delete ind;
+            }
+        }
 
-        virtual void run();
+        virtual void runIteration();
 
         virtual void initialize();
 
 
     protected:
-        double mutationChance;
-        double crossoverChance;
-        double bestFitness;
-        int popSize;
+        double mutationChance{};
+        double crossoverChance{};
+        double bestFitness{};
+        int popSize{};
+        std::vector<NGrouppingChallenge::Individual*> individuals;
+        // IMutationFinder* mutation_finder;
+        // ICrossoverFinder* crossover_finder;
     };
 
 }

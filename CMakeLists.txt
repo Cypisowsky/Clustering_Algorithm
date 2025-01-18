@@ -20,4 +20,6 @@ add_executable(Clustering_GA
         GA/BasicMutationAlgorithm.h
         GA/BasicCrossoverAlgorithm.cpp
         GA/BasicCrossoverAlgorithm.h
-        GA/InterfaceUtils/IGeneticAlgorithm.h)
+        GA/InterfaceUtils/IGeneticAlgorithm.h
+        GA/BasicGeneticAlgorithm.cpp
+        GA/BasicGeneticAlgorithm.h)

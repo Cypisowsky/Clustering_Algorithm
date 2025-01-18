@@ -6,9 +6,14 @@
 #define MUTATIONALGORITHM_H
 #include <random>
 
-#include "Individual.h"
+#include "../Individual.h"
+#include "../Individual.h"
 #include "InterfaceUtils/IResultEncoder.h"
 
+
+namespace NGrouppingChallenge {
+    class Individual;
+}
 
 namespace NGroupingChallenge {
     class IMutationFinder {
@@ -22,7 +27,7 @@ namespace NGroupingChallenge {
 
     protected:
         int chance;
-        std::mt19937 c_random_engine;
+        //std::mt19937 c_random_engine;
 
     };
 

@@ -25,7 +25,7 @@ namespace NGroupingChallenge {
 
     private:
         int chance;
-        std::mt19937 c_random_engine;
+        //std::mt19937 randomEngine;
 
     };
 
