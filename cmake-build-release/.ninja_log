@@ -1,0 +1,14 @@
+# ninja log v6
+32	375	7590047974817923	CMakeFiles/Clustering_GA.dir/GA/BasicResultHolder.cpp.obj	e98a4f5a64400a33
+22	411	7590047974712612	CMakeFiles/Clustering_GA.dir/Point.cpp.obj	5451dcb0946d254f
+13	549	7590047974627485	CMakeFiles/Clustering_GA.dir/GroupingEvaluator.cpp.obj	d316df5e835061a0
+412	785	7590047978615413	CMakeFiles/Clustering_GA.dir/GA/SmartEvaluator.cpp.obj	ee213506c237bbc0
+21	493	7590050730814955	CMakeFiles/Clustering_GA.dir/GA/Individual.cpp.obj	a96bf8b628348a1f
+4	1285	7590047974541876	CMakeFiles/Clustering_GA.dir/GaussianGroupingEvaluatorFactory.cpp.obj	396421c463a597a7
+5	286	7590050981558697	build.ninja	27f17d403ad4cd7d
+58	854	7590050982892882	CMakeFiles/Clustering_GA.dir/GA/BasicResultHolder.cpp.obj	d92a0210bfc7ba64
+48	969	7590050982797550	CMakeFiles/Clustering_GA.dir/Point.cpp.obj	23e279f2d67c5b57
+39	983	7590050982702400	CMakeFiles/Clustering_GA.dir/GroupingEvaluator.cpp.obj	b42779929ee6fe08
+53	1185	7590050982847605	CMakeFiles/Clustering_GA.dir/GA/Individual.cpp.obj	b53dcff4d8f0112a
+969	1490	7590050992010884	CMakeFiles/Clustering_GA.dir/GA/SmartEvaluator.cpp.obj	2ff6d7be4818752b
+31	1637	7590050982621830	CMakeFiles/Clustering_GA.dir/GaussianGroupingEvaluatorFactory.cpp.obj	a44045c19d297ef4

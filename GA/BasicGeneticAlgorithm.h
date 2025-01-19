@@ -17,6 +17,8 @@ namespace NGroupingChallenge {
 
         void runIteration() override;
 
+        double getBestFitness() override;
+
         private:
 
         class ParentsHolder {
@@ -37,7 +39,7 @@ namespace NGroupingChallenge {
             NGrouppingChallenge::Individual* parent2;
         };
 
-        double generateRandomNumber(double low, double high);
+        double generateRandomChance(double low, double high);
 
         std::mt19937 randomEngine;
 

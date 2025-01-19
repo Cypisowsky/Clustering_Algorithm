@@ -1,0 +1,3 @@
+C:/Documents/Kody/Studia_Rok_2/TEP/Clustering_GA/cmake-build-release/CMakeFiles/Clustering_GA.dir
+C:/Documents/Kody/Studia_Rok_2/TEP/Clustering_GA/cmake-build-release/CMakeFiles/edit_cache.dir
+C:/Documents/Kody/Studia_Rok_2/TEP/Clustering_GA/cmake-build-release/CMakeFiles/rebuild_cache.dir

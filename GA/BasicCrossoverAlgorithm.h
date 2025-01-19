@@ -6,13 +6,14 @@
 #define BASICCROSSOVERALGORITHM_H
 #include "InterfaceUtils/ICrossoverFinder.h"
 
+namespace NGroupingChallenge {
+    class BasicCrossoverAlgorithm : public NGroupingChallenge::ICrossoverFinder {
 
-class BasicCrossoverAlgorithm : public NGroupingChallenge::ICrossoverFinder {
+        using ICrossoverFinder::ICrossoverFinder;
 
-    using ICrossoverFinder::ICrossoverFinder;
-
-    NGrouppingChallenge::Individual crossover(const NGrouppingChallenge::Individual &individual1, const NGrouppingChallenge::Individual &individual2) override;
-};
+        std::pair<NGroupingChallenge::Individual, NGroupingChallenge::Individual> crossover(const NGroupingChallenge::Individual &individual1, const NGroupingChallenge::Individual &individual2, double chance) override;
+    };
+}
 
 
 

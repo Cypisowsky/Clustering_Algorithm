@@ -16,7 +16,7 @@ namespace NGrouppingChallenge {
 
         ~BasicMutationAlgorithm() override = default;
 
-        void mutate(NGrouppingChallenge::Individual &individual) override;
+        void mutate(NGrouppingChallenge::Individual &individual, double chance) override;
     };
 }
 

@@ -9,22 +9,25 @@
 #include "../Individual.h"
 
 
+
+
 namespace NGroupingChallenge {
+    class Individual;
     class ICrossoverFinder {
     public:
-        explicit ICrossoverFinder(int chance) {this->chance = chance;};
+        //explicit ICrossoverFinder(double chance) {this->chance = chance;};
+
+        ICrossoverFinder() = default;
 
         virtual ~ICrossoverFinder() = default;
 
         //virtual void findToCrossover(std::vector<NGrouppingChallenge::Individual>& individuals) {};
 
-        virtual NGrouppingChallenge::Individual crossover(const NGrouppingChallenge::Individual &individual1, const NGrouppingChallenge::Individual &individual2) {
-            return individual1;
-        };
+        virtual std::pair<NGroupingChallenge::Individual, NGroupingChallenge::Individual> crossover(const NGroupingChallenge::Individual &individual1, const NGroupingChallenge::Individual &individual2, double chance);;
 
 
-    private:
-        int chance;
+    protected:
+        //double chance;
         //std::mt19937 randomEngine;
 
     };

@@ -28,12 +28,13 @@ namespace NGroupingChallenge {
 
         virtual void initialize();
 
+        virtual double getBestFitness();
+
 
     protected:
-        double mutationChance{};
-        double crossoverChance{};
-        double bestFitness{};
-        int popSize{};
+        double mutationChance;
+        double crossoverChance;
+        int popSize;
         std::vector<NGrouppingChallenge::Individual*> individuals;
         // IMutationFinder* mutation_finder;
         // ICrossoverFinder* crossover_finder;

@@ -8,6 +8,8 @@
 #include <random>
 #include <vector>
 
+#include "GA/InterfaceUtils/IGeneticAlgorithm.h"
+
 using namespace std;
 
 namespace NGroupingChallenge
@@ -15,7 +17,9 @@ namespace NGroupingChallenge
 	class COptimizer
 	{
 	public:
-		COptimizer(CGroupingEvaluator& cEvaluator);
+		//COptimizer(CGroupingEvaluator& cEvaluator);
+
+		COptimizer(CGroupingEvaluator& cEvaluator, IGeneticAlgorithm& cGeneticAlgorithm);
 
 		void vInitialize();
 		void vRunIteration();
@@ -23,7 +27,8 @@ namespace NGroupingChallenge
 		vector<int>* pvGetCurrentBest() { return &v_current_best; }
 
 	private:
-		CGroupingEvaluator& c_evaluator; 
+		CGroupingEvaluator& c_evaluator;
+		IGeneticAlgorithm& c_genetic_algorithm;
 
 		double d_current_best_fitness;
 		vector<int> v_current_best;

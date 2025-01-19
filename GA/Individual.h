@@ -9,7 +9,8 @@
 #include "InterfaceUtils/IResultEncoder.h"
 
 
-namespace NGrouppingChallenge {
+namespace NGroupingChallenge {
+
 class Individual {
 
     public:
@@ -27,9 +28,9 @@ class Individual {
 
         Individual(Individual&& individual) noexcept: mutationFinder(individual.getMutationFinder()), crossoverFinder(individual.getCrossoverFinder()) {this->result = std::move(individual.result); individual.result = nullptr;};
 
-        Individual crossover(NGrouppingChallenge::Individual &individual) {};
+        std::pair<Individual, Individual> crossover(NGroupingChallenge::Individual &individual, const double chance) {return crossoverFinder->crossover(*this, individual, chance);};
 
-        void mutate(double chance) {mutationFinder->mutate(this);};
+        void mutate(double chance) {mutationFinder->mutate(*this, chance);};
 
         double getFitness() const {return result->getFitness();};
 
@@ -38,6 +39,19 @@ class Individual {
         NGroupingChallenge::IMutationFinder* getMutationFinder() const {return mutationFinder;};
 
         NGroupingChallenge::ICrossoverFinder* getCrossoverFinder() const {return crossoverFinder;};
+
+        Individual& operator=(Individual&& individual)  noexcept {
+            delete result;
+            delete mutationFinder;
+            delete crossoverFinder;
+            this->result = std::move(individual.result);
+            individual.result = nullptr;
+            this->mutationFinder = individual.getMutationFinder();
+            individual.mutationFinder = nullptr;
+            this->crossoverFinder = individual.getCrossoverFinder();
+            individual.crossoverFinder = nullptr;
+            return *this;
+        }
 
     private:
         NGroupingChallenge::IResultEncoder<int>* result;

@@ -4,7 +4,9 @@
 
 #include "BasicMutationAlgorithm.h"
 
-void NGrouppingChallenge::BasicMutationAlgorithm::mutate(NGrouppingChallenge::Individual &individual) {
+#include "BasicGeneticAlgorithm.h"
+
+void NGrouppingChallenge::BasicMutationAlgorithm::mutate(NGrouppingChallenge::Individual &individual, double chance) {
     auto result = individual.getResult();
     if(!result->mutate(chance)) {
         std::random_device rd;
@@ -19,3 +21,15 @@ void NGrouppingChallenge::BasicMutationAlgorithm::mutate(NGrouppingChallenge::In
         }
     }
 }
+
+double NGroupingChallenge::BasicGeneticAlgorithm::getBestFitness() {
+
+    double bestFitness = individuals[0]->getFitness();
+    for(int i=1; i<individuals.size(); i++) {
+        if(individuals[i]->getFitness() > bestFitness) {
+            bestFitness = individuals[i]->getFitness();
+        }
+    }
+    return bestFitness;
+}
+

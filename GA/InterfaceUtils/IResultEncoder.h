@@ -8,17 +8,23 @@
 
 
 namespace NGroupingChallenge {
+    //class IEvaluator;
+
     template<typename T>
-    class IResultEncoder<T> {
+    class IResultEncoder {
 
     public:
         IResultEncoder() = default;
+
+        //IResultEncoder(const int groupCount, std::vector<int>& values, IEvaluator* evaluator){};
 
         IResultEncoder(IResultEncoder& result_encoder) = default;
 
         virtual ~IResultEncoder() = default;
 
-        virtual std::vector<T> getValues() { return T(); }
+        virtual IResultEncoder* clone() { return new IResultEncoder(*this); };
+
+        virtual std::vector<T> getValues();
 
         virtual double getFitness() { return 0; }
 
@@ -26,11 +32,15 @@ namespace NGroupingChallenge {
 
         virtual void set(size_t index, T value) { }
 
+        virtual void set(std::vector<T>& values) { }
+
         virtual size_t size() { return 0; }
 
         virtual int groupCount() { return 0; }
 
         virtual bool mutate(double chance) { return false; }
+
+        //IResultEncoder& operator=(IResultEncoder&& result_encoder) noexcept { return *this; } ;
 
     };
 }

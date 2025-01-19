@@ -8,25 +8,28 @@
 
 #include "../Individual.h"
 #include "../Individual.h"
-#include "InterfaceUtils/IResultEncoder.h"
 
 
-namespace NGrouppingChallenge {
-    class Individual;
-}
+
 
 namespace NGroupingChallenge {
+    class Individual;
+
     class IMutationFinder {
     public:
-        explicit IMutationFinder(int chance) {this->chance = chance;};
+        //explicit IMutationFinder(double chance) {this->chance = chance;};
+
+        IMutationFinder() = default;
 
         virtual ~IMutationFinder() = default;
 
-        virtual void mutate(NGrouppingChallenge::Individual& individual){};
+        virtual void mutate(NGroupingChallenge::Individual& individual, double chance){};
+
+        //void setChance(const double chance) {this->chance = chance;};
 
 
     protected:
-        int chance;
+        //double chance;
         //std::mt19937 c_random_engine;
 
     };
