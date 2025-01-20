@@ -4,11 +4,15 @@
 
 #ifndef BASICGENETICALGORITHM_H
 #define BASICGENETICALGORITHM_H
-#include "InterfaceUtils/IGeneticAlgorithm.h"
+#include "../InterfaceUtils/IGeneticAlgorithm.h"
 
 
-namespace NGroupingChallenge {
+
     class BasicGeneticAlgorithm : public IGeneticAlgorithm {
+
+        /** @brief  Basic Implementation of Genetic Algorithm
+         * Follows straight-forward principles of Genetic Algorithm.
+         */
 
         public:
         using IGeneticAlgorithm::IGeneticAlgorithm;
@@ -19,27 +23,33 @@ namespace NGroupingChallenge {
 
         double getBestFitness() override;
 
+        Individual& getBestIndividual() override;
+
+        void setIndividuals(std::vector<Individual*>& individuals) override { this->individuals = individuals; };
+
         private:
 
         class ParentsHolder {
 
             public:
-            ParentsHolder(NGrouppingChallenge::Individual* parent1, NGrouppingChallenge::Individual* parent2):
+            ParentsHolder(Individual* parent1, Individual* parent2):
             parent1(parent1), parent2(parent2){}
 
-            ~ParentsHolder()= default;
+            ~ParentsHolder() = default;
 
-            NGrouppingChallenge::Individual* getParent1() const { return parent1; }
+            Individual* getParent1() const { return parent1; }
 
-            NGrouppingChallenge::Individual* getParent2() const { return parent2; }
+            Individual* getParent2() const { return parent2; }
 
 
             private:
-            NGrouppingChallenge::Individual* parent1;
-            NGrouppingChallenge::Individual* parent2;
+            Individual* parent1;
+            Individual* parent2;
         };
 
         double generateRandomChance(double low, double high);
+
+        size_t generateRandomIndex(size_t low, size_t high);
 
         std::mt19937 randomEngine;
 
@@ -50,7 +60,7 @@ namespace NGroupingChallenge {
 
 
     };
-}
+
 
 
 #endif //BASICGENETICALGORITHM_H

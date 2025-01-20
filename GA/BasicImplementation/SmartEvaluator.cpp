@@ -4,7 +4,13 @@
 
 #include "SmartEvaluator.h"
 
-double NGroupingChallenge::SmartEvaluator::evaluateFitness(std::vector<int>& values) {
+#include <vector>
+
+double SmartEvaluator::evaluateFitness(std::vector<int>& values) {
+
+    if(values.empty())
+        return -1;
+
     double distance;
     double distanceSum = 0;
 
@@ -17,7 +23,7 @@ double NGroupingChallenge::SmartEvaluator::evaluateFitness(std::vector<int>& val
             {
                 distance = points[i].dCalculateDistance(points[j]);
 
-                if (distance >= 0)
+                if (distance > 0)
                 {
                     distanceSum += 2.0 * points[i].dCalculateDistance(points[j]);
                 }
@@ -28,18 +34,19 @@ double NGroupingChallenge::SmartEvaluator::evaluateFitness(std::vector<int>& val
     return distanceSum;
 }
 
-double NGroupingChallenge::SmartEvaluator::recalculateFitness(std::vector<int> &values, const size_t index, const size_t newGroup) {
+double SmartEvaluator::recalculateFitness(std::vector<int> &values, const size_t index, const int newGroup, const double currentFitness) {
 
     double distance;
-    double distanceSum = 0;
+    double distanceSum = currentFitness;
 
-    for (size_t i = 0; i + 1 < points.size(); i++)
+    for (size_t i = 0; i  < points.size(); i++)
     {
+        auto t1 = values[i];
         if (newGroup==values[i])
         {
             distance = points[index].dCalculateDistance(points[i]);
 
-            if (distance >= 0)
+            if (distance > 0)
             {
                 distanceSum += 2.0 * distance;
             }else {
@@ -47,7 +54,8 @@ double NGroupingChallenge::SmartEvaluator::recalculateFitness(std::vector<int> &
                 return -1;
             }
         }
-        if (values[index]==values[i])
+        auto t2 = values[index];
+        if (values[index]==values[i] && i!=index)
         {
             distance = points[index].dCalculateDistance(points[i]);
 

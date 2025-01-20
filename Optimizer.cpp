@@ -9,11 +9,7 @@ using namespace NGroupingChallenge;
 // 	c_random_engine.seed(c_seed_generator());
 // }
 
-COptimizer::COptimizer(CGroupingEvaluator& cEvaluator , IGeneticAlgorithm& cGeneticAlgorithm)
-	: c_evaluator(cEvaluator), c_genetic_algorithm(cGeneticAlgorithm) {
-	random_device c_seed_generator;
-	c_random_engine.seed(c_seed_generator());
-}
+
 
 // void COptimizer::vInitialize()
 // {
@@ -24,16 +20,42 @@ COptimizer::COptimizer(CGroupingEvaluator& cEvaluator , IGeneticAlgorithm& cGene
 // 	v_current_best.resize(c_evaluator.iGetNumberOfPoints());
 // }
 
+
+
 void COptimizer::vInitialize(){
 
+	for (auto individual: c_genetic_algorithm.get_individuals()) {
+		individual->getResult()->fillWithRandomValues(c_evaluator.iGetNumberOfPoints());
+	}
 	c_genetic_algorithm.initialize();
+	d_current_best_fitness = c_genetic_algorithm.getBestFitness();
+	d_starting_fitness = d_current_best_fitness;
 }
 
 void COptimizer::vRunIteration() {
 
 	c_genetic_algorithm.runIteration();
 
-	std::cout<<c_genetic_algorithm.getBestFitness()<<std::endl;
+	double t = c_genetic_algorithm.getBestFitness();
+
+	if(d_current_best_fitness>t)
+		d_current_best_fitness = t;
+
+	if(d_worst_fitness<t)
+		d_worst_fitness = t;
+
+	i_iterations++;
+
+}
+
+void COptimizer::printResult() {
+
+	std::cout<<"Starting random fitness: "<<d_starting_fitness<<std::endl;
+	std::cout<<"Best fitness: "<<d_current_best_fitness<<std::endl;
+	std::cout<<"Worst fitness: "<<d_worst_fitness<<std::endl;
+	std::cout<<"Iterations: "<<i_iterations<<std::endl;
+	std::cout<<"Optimization: "<<(d_starting_fitness-d_current_best_fitness)*100/d_starting_fitness<<" %"<<std::endl;
+	std::cout<<"Optimization per iteration: "<<((d_starting_fitness-d_current_best_fitness)*100/d_starting_fitness)/i_iterations<<" %"<<std::endl;
 }
 
 

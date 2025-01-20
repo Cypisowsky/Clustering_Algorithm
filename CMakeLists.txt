@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.29)
 project(Clustering_GA)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 11)
 
 add_executable(Clustering_GA
         GaussianGroupingEvaluatorFactory.cpp
@@ -14,17 +14,17 @@ add_executable(Clustering_GA
         GA/Individual.cpp
         GA/Individual.h
         GA/InterfaceUtils/IResultEncoder.h
-        GA/BasicResultHolder.cpp
-        GA/BasicResultHolder.h
-        GA/BasicMutationAlgorithm.cpp
-        GA/BasicMutationAlgorithm.h
-        GA/BasicCrossoverAlgorithm.cpp
-        GA/BasicCrossoverAlgorithm.h
+        GA/BasicImplementation/BasicResultHolder.cpp
+        GA/BasicImplementation/BasicResultHolder.h
+        GA/BasicImplementation/BasicMutationAlgorithm.cpp
+        GA/BasicImplementation/BasicMutationAlgorithm.h
+        GA/BasicImplementation/BasicCrossoverAlgorithm.cpp
+        GA/BasicImplementation/BasicCrossoverAlgorithm.h
         GA/InterfaceUtils/IGeneticAlgorithm.h
-        GA/BasicGeneticAlgorithm.cpp
-        GA/BasicGeneticAlgorithm.h
-        GA/RandomIndividualsCreator.cpp
-        GA/RandomIndividualsCreator.h
+        GA/BasicImplementation/BasicGeneticAlgorithm.cpp
+        GA/BasicImplementation/BasicGeneticAlgorithm.h
         GA/InterfaceUtils/IEvaluator.h
-        GA/SmartEvaluator.cpp
-        GA/SmartEvaluator.h)
+        GA/BasicImplementation/SmartEvaluator.cpp
+        GA/BasicImplementation/SmartEvaluator.h
+        GA/ResulttoCSVWriter.cpp
+        GA/ResulttoCSVWriter.h)

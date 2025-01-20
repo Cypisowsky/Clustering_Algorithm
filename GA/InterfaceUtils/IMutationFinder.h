@@ -10,12 +10,15 @@
 #include "../Individual.h"
 
 
-
-
-namespace NGroupingChallenge {
-    class Individual;
+class Individual;
 
     class IMutationFinder {
+
+        /** @brief Interface for mutation algorithms
+         *
+         *  Interface for mutation algorithms. It takes an individual and with a given chance modifies it
+         *  by changing the genes of the individual
+         */
     public:
         //explicit IMutationFinder(double chance) {this->chance = chance;};
 
@@ -23,7 +26,7 @@ namespace NGroupingChallenge {
 
         virtual ~IMutationFinder() = default;
 
-        virtual void mutate(NGroupingChallenge::Individual& individual, double chance){};
+        virtual void mutate(Individual& individual, double chance) = 0;
 
         //void setChance(const double chance) {this->chance = chance;};
 
@@ -35,7 +38,7 @@ namespace NGroupingChallenge {
     };
 
 
-}
+
 
 
 #endif //MUTATIONALGORITHM_H

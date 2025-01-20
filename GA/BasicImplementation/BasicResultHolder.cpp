@@ -5,6 +5,13 @@
 #include "BasicResultHolder.h"
 
 
+#include <iostream>
+#include <random>
+
+
+
+
+
 // class NGroupingChallenge::CPoint;
 // double NGroupingChallenge::SEResultHolder::calculateFitness() {
 //     double distance;
@@ -69,3 +76,24 @@
 //     return distanceSum;
 // }
 
+void BasicResultHolder::set(const size_t index, const int value) {
+
+    if(values[index]==value) return;
+
+    if (index>0&&index<values.size()) {
+        fitness = evaluator->recalculateFitness(values, index, value, fitness);
+        values[index] = value;
+    }
+}
+
+
+void BasicResultHolder::fillWithRandomValues(int size) {
+    values.clear();
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> chanceDist(0, groupCount());
+    for (int i = 0; i < size; i++) {
+        values.push_back(chanceDist(gen)); // Losowa wartość w przedziale [0, groupCounter]
+    }
+    fitness = evaluator->evaluateFitness(values);
+}

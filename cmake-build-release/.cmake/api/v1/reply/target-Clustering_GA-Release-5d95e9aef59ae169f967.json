@@ -38,7 +38,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-O3 -DNDEBUG -std=gnu++20 -fdiagnostics-color=always"
+					"fragment" : "-O3 -DNDEBUG -std=gnu++11 -fdiagnostics-color=always"
 				}
 			],
 			"language" : "CXX",
@@ -48,7 +48,7 @@
 				[
 					1
 				],
-				"standard" : "20"
+				"standard" : "11"
 			},
 			"sourceIndexes" : 
 			[
@@ -62,7 +62,7 @@
 				12,
 				14,
 				17,
-				19,
+				20,
 				22
 			]
 		}
@@ -110,7 +110,7 @@
 				12,
 				14,
 				17,
-				19,
+				20,
 				22
 			]
 		},
@@ -127,7 +127,7 @@
 				15,
 				16,
 				18,
-				20,
+				19,
 				21,
 				23
 			]
@@ -194,34 +194,34 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "GA/BasicResultHolder.cpp",
+			"path" : "GA/BasicImplementation/BasicResultHolder.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "GA/BasicResultHolder.h",
+			"path" : "GA/BasicImplementation/BasicResultHolder.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "GA/BasicMutationAlgorithm.cpp",
+			"path" : "GA/BasicImplementation/BasicMutationAlgorithm.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "GA/BasicMutationAlgorithm.h",
+			"path" : "GA/BasicImplementation/BasicMutationAlgorithm.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "GA/BasicCrossoverAlgorithm.cpp",
+			"path" : "GA/BasicImplementation/BasicCrossoverAlgorithm.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "GA/BasicCrossoverAlgorithm.h",
+			"path" : "GA/BasicImplementation/BasicCrossoverAlgorithm.h",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -232,23 +232,12 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "GA/BasicGeneticAlgorithm.cpp",
+			"path" : "GA/BasicImplementation/BasicGeneticAlgorithm.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "GA/BasicGeneticAlgorithm.h",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "GA/RandomIndividualsCreator.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"path" : "GA/RandomIndividualsCreator.h",
+			"path" : "GA/BasicImplementation/BasicGeneticAlgorithm.h",
 			"sourceGroupIndex" : 1
 		},
 		{
@@ -259,12 +248,23 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "GA/SmartEvaluator.cpp",
+			"path" : "GA/BasicImplementation/SmartEvaluator.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "GA/SmartEvaluator.h",
+			"path" : "GA/BasicImplementation/SmartEvaluator.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "GA/ResulttoCSVWriter.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "GA/ResultToCSVWriter.h",
 			"sourceGroupIndex" : 1
 		}
 	],

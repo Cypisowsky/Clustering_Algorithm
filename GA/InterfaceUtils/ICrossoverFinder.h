@@ -7,23 +7,28 @@
 #include <random>
 
 #include "../Individual.h"
+#include "../Individual.h"
+#include "../Individual.h"
 
 
 
 
-namespace NGroupingChallenge {
     class Individual;
+
     class ICrossoverFinder {
+
+        /** @brief Interface for crossover algorithms
+         *
+         *  Interface for crossover algorithms. It takes two individuals and with a given chance and modifies them
+         *  by combining the genes of the parents
+         */
     public:
-        //explicit ICrossoverFinder(double chance) {this->chance = chance;};
 
         ICrossoverFinder() = default;
 
         virtual ~ICrossoverFinder() = default;
 
-        //virtual void findToCrossover(std::vector<NGrouppingChallenge::Individual>& individuals) {};
-
-        virtual std::pair<NGroupingChallenge::Individual, NGroupingChallenge::Individual> crossover(const NGroupingChallenge::Individual &individual1, const NGroupingChallenge::Individual &individual2, double chance);;
+        virtual std::pair<Individual*, Individual*> crossover(Individual &individual1, Individual &individual2, double chance) = 0;
 
 
     protected:
@@ -33,7 +38,9 @@ namespace NGroupingChallenge {
     };
 
 
-}
+
+
+
 
 
 

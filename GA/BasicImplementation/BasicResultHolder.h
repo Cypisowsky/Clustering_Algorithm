@@ -8,11 +8,11 @@
 #include <utility>
 #include <vector>
 
-#include "InterfaceUtils/IResultEncoder.h"
-#include "../Point.h"
-#include "InterfaceUtils/IEvaluator.h"
+#include "../InterfaceUtils/IResultEncoder.h"
+#include "../../Point.h"
+#include "../InterfaceUtils/IEvaluator.h"
 
-namespace NGroupingChallenge {
+
 
 
 
@@ -26,6 +26,8 @@ namespace NGroupingChallenge {
         BasicResultHolder(const int groupCount, std::vector<int>& values, IEvaluator* evaluator) : values(values), groupCounter(groupCount), fitness(INT_MAX), evaluator(evaluator)
         {fitness=evaluator->evaluateFitness(values);}
 
+        BasicResultHolder(const int groupCount, IEvaluator* evaluator) : groupCounter(groupCount), fitness(INT_MAX), evaluator(evaluator){}
+
         BasicResultHolder(BasicResultHolder& resultHolder) : values(std::vector<int>(resultHolder.values)), groupCounter(resultHolder.groupCount()), fitness(resultHolder.fitness), evaluator(resultHolder.evaluator){}
 
         IResultEncoder<int>* clone() override { return new BasicResultHolder(*this); }
@@ -36,10 +38,9 @@ namespace NGroupingChallenge {
 
         double getFitness() override { return fitness; }
 
-        int get(const size_t index) override { return index<0||index>=values.size()? -1 : values[index]; }
+        int get(const size_t index) override { return index>=values.size()? -1 : values[index]; }
 
-        void set(const size_t index, const int value) override { if (index>0&&index<values.size())
-            {evaluator->recalculateFitness(values, index, value); values[index] = value;} }
+        void set(size_t index, int value) override;
 
         void set(vector<int> &values) override { this->values = values; fitness=evaluator->evaluateFitness(values); }
 
@@ -49,20 +50,20 @@ namespace NGroupingChallenge {
 
         bool mutate(double chance) override { return false; }
 
+        void fillWithRandomValues(int size) override;
+
 
 
     private:
         std::vector<int> values;
         int groupCounter;
         double fitness;
-        std::vector<CPoint*> points;
+        //std::vector<CPoint*> points;
         IEvaluator* evaluator;
 
-        double calculateFitness();
-        double recalculateFitness(size_t index, size_t newGroup);
 
     };
-}
+
 
 
 

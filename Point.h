@@ -14,6 +14,9 @@ namespace NGroupingChallenge
 		void vAddCoordinate(double dCoordinate);
 		double dCalculateDistance(const CPoint& cOther) const;
 
+		//added
+		vector<double> getCoordinates() const { return v_coordinates; }
+
 	private:
 		const double d_WRONG_DISTANCE_VALUE = -1;
 
