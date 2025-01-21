@@ -1,4 +1,4 @@
 "C:\Program Files\JetBrains\CLion 2024.2.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Release "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2024.2.2/bin/ninja/win/x64/ninja.exe" -G Ninja -S C:\Documents\Kody\Studia_Rok_2\TEP\Clustering_GA -B C:\Documents\Kody\Studia_Rok_2\TEP\Clustering_GA\cmake-build-release
--- Configuring done (0.2s)
+-- Configuring done (0.9s)
 -- Generating done (0.0s)
 -- Build files have been written to: C:/Documents/Kody/Studia_Rok_2/TEP/Clustering_GA/cmake-build-release

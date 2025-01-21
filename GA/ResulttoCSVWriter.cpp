@@ -24,9 +24,12 @@ void ResultToCSVWriter::writeCoordinatesToCSV(IResultEncoder<int> &result, const
                                 file << ",";
                             }
                         }
-                        file << std::endl;
+
+                        file << " ; ";
                     }
+
                 }
+                file << " | " << std::endl;
             }
         } catch (const std::exception &e) {
             file.close();

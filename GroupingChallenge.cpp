@@ -14,12 +14,12 @@ using namespace NGroupingChallenge;
 
 int main(){
 
-	CGaussianGroupingEvaluatorFactory c_evaluator_factory(5, 100, 5);
+	CGaussianGroupingEvaluatorFactory c_evaluator_factory(5, 20, 5);
 
 		c_evaluator_factory
 			.cAddDimension(-100, 100, 1.0, 1.0)
-			.cAddDimension(-100, 100, 1.0, 1.0)
 			.cAddDimension(-100, 100, 1.0, 1.0);
+			//.cAddDimension(-100, 100, 1.0, 1.0);
 			// .cAddDimension(-100, 100, 1.0, 1.0)
 			// .cAddDimension(-100, 100, 1.0, 1.0)
 			// .cAddDimension(-100, 100, 1.0, 1.0)
@@ -35,16 +35,23 @@ int main(){
 		IMutationFinder* mutationFinder = new BasicMutationAlgorithm();
 		IResultEncoder<int>* resultEncoder = new BasicResultHolder(pc_evaluator->iGetUpperBound()-1, resultEvaluator);
 
-		IGeneticAlgorithm* geneticAlgorithm = new BasicGeneticAlgorithm(10, 0.2, 0.6);
+		IGeneticAlgorithm* geneticAlgorithm = new BasicGeneticAlgorithm(30, 0.1, 0.6);
 
 		COptimizer c_optimizer(*pc_evaluator, *geneticAlgorithm, resultEncoder, mutationFinder, crossoverFinder);
 
 		c_optimizer.vInitialize();
 
 		std::cout<<"Starting optimization:"<<std::endl;
-		for (int i = 0; i < 1000; i++)
+		int iterCout = 10000;
+		int percent=0;
+		for (int i = 0; i < iterCout; i++)
 		{
 			c_optimizer.vRunIteration();
+			int temppercent = (i*100)/iterCout;
+			if(temppercent%10==0 && percent!=temppercent) {
+				percent=temppercent;
+				cout<<"Percent done: "<<percent<<endl;
+			}
 		}
 
 		c_optimizer.printResult();
