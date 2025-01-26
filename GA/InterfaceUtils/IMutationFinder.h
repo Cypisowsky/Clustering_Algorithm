@@ -26,7 +26,7 @@ class Individual;
 
         virtual ~IMutationFinder() = default;
 
-        virtual void mutate(Individual& individual, double chance) = 0;
+        virtual void mutate(Individual* individual, double chance) = 0;
 
         //void setChance(const double chance) {this->chance = chance;};
 

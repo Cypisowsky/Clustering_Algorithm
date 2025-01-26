@@ -16,7 +16,7 @@
 
         using ICrossoverFinder::ICrossoverFinder;
 
-        std::pair<Individual*, Individual*> crossover(Individual &individual1, Individual &individual2, double chance) override;
+        std::pair<Individual*, Individual*> crossover(Individual *individual1, Individual *individual2, double chance) override;
     };
 
 

@@ -30,13 +30,15 @@ class Individual {
             this->result = std::move(individual.result); individual.result = nullptr;
         };
 
-        std::pair<Individual*, Individual*> crossover(Individual &individual, double chance);
+        std::pair<Individual*, Individual*> crossover(Individual *individual, double chance);
 
         void mutate(double chance);
 
         double getFitness() const {return result->getFitness();};
 
         IResultEncoder<int>* getResult() const {return result;};
+
+        void setResult(IResultEncoder<int>* result) {this->result=result;};
 
         IMutationFinder* getMutationFinder() const {return mutationFinder;};
 

@@ -9,12 +9,12 @@
 #include "BasicMutationAlgorithm.h"
 #include "../Individual.h"
 
-std::pair<Individual*, Individual*> BasicCrossoverAlgorithm::crossover(Individual &individual1, Individual &individual2, double chance) {
+std::pair<Individual*, Individual*> BasicCrossoverAlgorithm::crossover(Individual *individual1, Individual *individual2, double chance) {
 
-    auto result = individual1.getResult();
-    auto result2 = individual2.getResult();
+    auto result = individual1->getResult();
+    auto result2 = individual2->getResult();
 
-    if(result->size() != result2->size() || result->groupCount() != result2->groupCount() || individual1.getMutationFinder() != individual2.getMutationFinder()) {
+    if(result->size() != result2->size() || result->groupCount() != result2->groupCount() || individual1->getMutationFinder() != individual2->getMutationFinder()) {
         throw std::invalid_argument("Individuals must have the same size and group count");
     }
 
@@ -25,7 +25,7 @@ std::pair<Individual*, Individual*> BasicCrossoverAlgorithm::crossover(Individua
     if(chanceDist(gen) > chance) {
         // Individual* newIndividual = new Individual(individual1);
         // Individual* newIndividual2 = new Individual(individual2);
-        return std::make_pair<Individual*,Individual*>(&individual1, &individual2);
+        return std::make_pair(individual1, individual2);
     }
 
     std::uniform_int_distribution<> elementDist(0, (int) result->size()-1);
@@ -35,10 +35,10 @@ std::pair<Individual*, Individual*> BasicCrossoverAlgorithm::crossover(Individua
 
     for(int i=position; i<result->size(); i++) {
         auto temp = result->get(i);
-        individual1.getResult()->set(i, result2->get(i));
-        individual2.getResult()->set(i, temp);
+        individual1->getResult()->set(i, result2->get(i));
+        individual2->getResult()->set(i, temp);
     }
 
-    return std::make_pair<Individual*,Individual*>(&individual1, &individual2);
+    return std::make_pair(individual1, individual2);
 }
 

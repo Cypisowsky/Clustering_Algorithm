@@ -55,7 +55,7 @@
 
         //std::vector<ParentsHolder*> parents;
 
-        std::vector<ParentsHolder*> chooseParents();
+        std::vector<std::pair<Individual *, Individual *>> chooseParents();
 
 
 

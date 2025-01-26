@@ -20,7 +20,7 @@
         using IMutationFinder::IMutationFinder;
 
 
-        void mutate(Individual &individual, double chance) override;
+        void mutate(Individual *individual, double chance) override;
     };
 
 

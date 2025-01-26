@@ -6,6 +6,7 @@
 #define IGENETICALGORITHM_H
 #include <vector>
 
+#include "IParentChooser.h"
 #include "../Individual.h"
 
 
@@ -18,11 +19,18 @@
          */
 
     public:
-        IGeneticAlgorithm(const int popSize, const double mutationChance, const double crossoverChance, const std::vector<Individual*>& individuals):
-        popSize(popSize), mutationChance(mutationChance), crossoverChance(crossoverChance), individuals(individuals) {};
+        IGeneticAlgorithm(const int popSize, const double mutationChance, const double crossoverChance, IParentChooser* parentChooser, const std::vector<Individual*>& individuals):
+        popSize(popSize), mutationChance(mutationChance), crossoverChance(crossoverChance), parentChooser(parentChooser),individuals(individuals) {};
 
-        IGeneticAlgorithm(const int popSize, const double mutationChance, const double crossoverChance):
-        mutationChance(mutationChance), crossoverChance(crossoverChance), popSize(popSize) {};
+        IGeneticAlgorithm(const int popSize, const double mutationChance, const double crossoverChance, IParentChooser* parentChooser):
+        mutationChance(mutationChance), crossoverChance(crossoverChance),parentChooser(parentChooser), popSize(popSize) {};
+
+        IGeneticAlgorithm(const IGeneticAlgorithm& other):
+        mutationChance(other.mutationChance), crossoverChance(other.crossoverChance), popSize(other.popSize), parentChooser(other.parentChooser) {
+            for(int i = 0; i < other.popSize; i++) {
+                this->individuals.push_back(new Individual(*other.individuals[i]));
+            }
+        };
 
         virtual void setIndividuals(std::vector<Individual*>& individuals) {this->individuals = individuals;}
 
@@ -50,6 +58,7 @@
         double crossoverChance;
         int popSize;
         std::vector<Individual*> individuals;
+        IParentChooser* parentChooser{};
         // IMutationFinder* mutation_finder;
         // ICrossoverFinder* crossover_finder;
     };

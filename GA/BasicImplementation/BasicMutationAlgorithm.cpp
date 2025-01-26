@@ -6,8 +6,8 @@
 
 #include "BasicGeneticAlgorithm.h"
 
-void BasicMutationAlgorithm::mutate(Individual &individual, double chance) {
-    auto result = individual.getResult();
+void BasicMutationAlgorithm::mutate(Individual *individual, double chance) {
+    auto result = individual->getResult();
     if(!result->mutate(chance)) {
         std::random_device rd;
         std::mt19937 gen(rd());

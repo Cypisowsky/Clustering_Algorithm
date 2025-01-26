@@ -16,12 +16,16 @@ Individual::Individual(IResultEncoder<int> *result_encoder, IMutationFinder *mut
 }
 
 
-std::pair<Individual*, Individual*> Individual::crossover(Individual &individual, const double chance) {
-    return crossoverFinder->crossover(*this, individual, chance);
+std::pair<Individual*, Individual*> Individual::crossover(Individual *individual, const double chance) {
+    if(!crossoverFinder)
+        throw std::invalid_argument("No crossover algorithm found");
+    return crossoverFinder->crossover(this, individual, chance);
 }
 
 void Individual::mutate(double chance) {
-    mutationFinder->mutate(*this, chance);
+    if(!mutationFinder)
+        throw std::invalid_argument("No mutation algorithm found");
+    mutationFinder->mutate(this, chance);
 }
 
 Individual &Individual::operator=(Individual &&individual) noexcept {

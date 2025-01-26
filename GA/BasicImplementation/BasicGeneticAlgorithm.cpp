@@ -25,7 +25,7 @@ void BasicGeneticAlgorithm::runIteration() {
         //add children
         for(int i=0; i<parents.size(); i++) {
 
-                auto children =(parents[i]->getParent1()->crossover(*parents[i]->getParent2(), crossoverChance));
+                auto children =(parents[i].first->crossover(parents[i].second, crossoverChance));
 
                 children.first->mutate(mutationChance);
                 children.second->mutate(mutationChance);
@@ -33,10 +33,8 @@ void BasicGeneticAlgorithm::runIteration() {
                 individuals[ind++]=(children.first);
                 delete individuals[ind];
                 individuals[ind++]=(children.second);
-                delete parents[i];
+                // delete parents[i];
         }
-
-
         
 
 }
@@ -59,19 +57,20 @@ size_t BasicGeneticAlgorithm::generateRandomIndex(const size_t low, const size_t
         return dis(randomEngine);
 }
 
-std::vector<BasicGeneticAlgorithm::ParentsHolder*> BasicGeneticAlgorithm::chooseParents() {
+std::vector<std::pair<Individual *, Individual *>> BasicGeneticAlgorithm::chooseParents() {
 
-        std::vector<ParentsHolder*> parents;
-        for(int i=0; i<individuals.size()/2; i++) {
-                auto ind1 = individuals[generateRandomIndex(0, individuals.size()-1)];
-                auto ind2 = individuals[generateRandomIndex(0, individuals.size()-1)];
-                auto p1 = ind1->getFitness()>ind2->getFitness()? ind1:ind2;
-                ind1 = individuals[generateRandomIndex(0, individuals.size()-1)];
-                ind2 = individuals[generateRandomIndex(0, individuals.size()-1)];
-                auto p2 = ind1->getFitness()>ind2->getFitness()? ind1:ind2;
-                parents.push_back(new ParentsHolder(new Individual(*p1), new Individual(*p2)));
-        }
-        return parents;
+        return parentChooser->chooseParents(individuals);
+        // std::vector<ParentsHolder*> parents;
+        // for(int i=0; i<individuals.size()/2; i++) {
+        //         auto ind1 = individuals[generateRandomIndex(0, individuals.size()-1)];
+        //         auto ind2 = individuals[generateRandomIndex(0, individuals.size()-1)];
+        //         auto p1 = ind1->getFitness()>ind2->getFitness()? ind1:ind2;
+        //         ind1 = individuals[generateRandomIndex(0, individuals.size()-1)];
+        //         ind2 = individuals[generateRandomIndex(0, individuals.size()-1)];
+        //         auto p2 = ind1->getFitness()>ind2->getFitness()? ind1:ind2;
+        //         parents.push_back(new ParentsHolder(new Individual(*p1), new Individual(*p2)));
+        // }
+        // return parents;
 }
 
 double BasicGeneticAlgorithm::getBestFitness() {

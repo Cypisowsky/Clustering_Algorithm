@@ -4,6 +4,7 @@
 
 #ifndef CROSSOVERALGORITHM_H
 #define CROSSOVERALGORITHM_H
+#pragma once
 #include <random>
 
 #include "../Individual.h"
@@ -28,7 +29,7 @@
 
         virtual ~ICrossoverFinder() = default;
 
-        virtual std::pair<Individual*, Individual*> crossover(Individual &individual1, Individual &individual2, double chance) = 0;
+        virtual std::pair<Individual*, Individual*> crossover(Individual *individual1, Individual *individual2, double chance) = 0;
 
 
     protected:

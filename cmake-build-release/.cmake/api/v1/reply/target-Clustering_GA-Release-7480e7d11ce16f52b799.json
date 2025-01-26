@@ -63,7 +63,11 @@
 				14,
 				17,
 				20,
-				22
+				22,
+				24,
+				26,
+				29,
+				31
 			]
 		}
 	],
@@ -111,7 +115,11 @@
 				14,
 				17,
 				20,
-				22
+				22,
+				24,
+				26,
+				29,
+				31
 			]
 		},
 		{
@@ -129,7 +137,12 @@
 				18,
 				19,
 				21,
-				23
+				23,
+				25,
+				27,
+				28,
+				30,
+				32
 			]
 		}
 	],
@@ -265,6 +278,55 @@
 		{
 			"backtrace" : 1,
 			"path" : "GA/ResultToCSVWriter.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "GA/StrictComparisonImplementation/StrictCompCrossoverAlgorithm.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "GA/StrictComparisonImplementation/StrictCompCrossoverAlgorithm.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "GA/StrictComparisonImplementation/StrictCompMutationAlgorithm.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "GA/StrictComparisonImplementation/StrictCompMutationAlgorithm.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "GA/InterfaceUtils/IParentChooser.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "GA/WideSearchImplementation/WideSearchParentChooser.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "GA/WideSearchImplementation/WideSearchParentChooser.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "GA/WideSearchImplementation/WideSearchMutationAlgorithm.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "GA/WideSearchImplementation/WideSearchMutationAlgorithm.h",
 			"sourceGroupIndex" : 1
 		}
 	],

@@ -30,7 +30,6 @@ namespace NGroupingChallenge
 
 			for (int i = 0; i < c_genetic_algorithm.getPopSize(); i++) {
 				auto result = resultEncoder->clone();
-				result->fillWithRandomValues(c_evaluator.iGetNumberOfPoints());
 				individuals.push_back(new Individual(result, mutationFinder, crossoverFinder));
 			}
 
@@ -46,7 +45,7 @@ namespace NGroupingChallenge
 
 		void printResult();
 
-		Individual& getBestIndividual() { return c_genetic_algorithm.getBestIndividual(); }
+		Individual& getBestIndividual() const { return c_genetic_algorithm.getBestIndividual(); }
 
 	private:
 		CGroupingEvaluator& c_evaluator;

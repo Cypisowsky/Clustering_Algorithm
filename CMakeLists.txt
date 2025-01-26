@@ -27,4 +27,14 @@ add_executable(Clustering_GA
         GA/BasicImplementation/SmartEvaluator.cpp
         GA/BasicImplementation/SmartEvaluator.h
         GA/ResulttoCSVWriter.cpp
-        GA/ResulttoCSVWriter.h)
+        GA/ResulttoCSVWriter.h
+        GA/StrictComparisonImplementation/StrictCompCrossoverAlgorithm.cpp
+        GA/StrictComparisonImplementation/StrictCompCrossoverAlgorithm.h
+        GA/StrictComparisonImplementation/StrictCompMutationAlgorithm.cpp
+        GA/StrictComparisonImplementation/StrictCompMutationAlgorithm.h
+        GA/InterfaceUtils/IParentChooser.h
+        GA/WideSearchImplementation/WideSearchParentChooser.cpp
+        GA/WideSearchImplementation/WideSearchParentChooser.h
+        GA/WideSearchImplementation/WideSearchMutationAlgorithm.cpp
+        GA/WideSearchImplementation/WideSearchMutationAlgorithm.h
+)
